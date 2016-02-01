@@ -1,5 +1,7 @@
 package com.bookpub.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,5 +25,10 @@ public class BookController {
 	@RequestMapping(value="/{isbn}", method=RequestMethod.GET)
 	public Book getBook(@PathVariable String isbn) {
 		return bookRepository.findBookByIsbn(isbn);
+	}
+	
+	@RequestMapping(value="/sessioin", method=RequestMethod.GET)
+	public String getSessionId(HttpServletRequest request) {
+		return request.getSession().getId();
 	}
 }

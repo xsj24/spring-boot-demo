@@ -20,4 +20,5 @@ public class HelloController {
 		System.out.println(foo);
 		return "test.html";
 	}
+	
 }
