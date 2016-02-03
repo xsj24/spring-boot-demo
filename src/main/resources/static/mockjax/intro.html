@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fortune App</title>
+	<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.6.2/jquery.mockjax.js"></script>
+</head>
+<body>
+	<div id="fortune"></div>
+	<script type="text/javascript">
+		$.mockjax({
+		  url: '/restful/fortune',
+		  responseTime: 750,
+		  responseText: {
+		    status: 'success',
+		    fortune: 'Are you a turtle?'
+		  }
+		});
+
+		$.getJSON('/restful/fortune', 
+			function(response)  {
+				if(response.status == 'success') {
+					$('#fortune').html('Your fortune is: ' + response.fortune);
+				} else {
+					$('#fortune').html('Things do not look good, no fortune was told');
+				}
+			}
+		);
+
+		
+
+	</script>
+</body>
+</html>

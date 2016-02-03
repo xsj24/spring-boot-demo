@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_ajax_get</title>
+<script src="../js/jquery-1.12.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function(){
+			$.get("/get", {foo:'xsj'}, function(data, status){
+				alert("数据： " + data + "\n状态：" + status);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<button>向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+</body>
+</html>

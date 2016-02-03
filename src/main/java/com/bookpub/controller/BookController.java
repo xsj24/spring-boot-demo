@@ -27,8 +27,9 @@ public class BookController {
 		return bookRepository.findBookByIsbn(isbn);
 	}
 	
-	@RequestMapping(value="/sessioin", method=RequestMethod.GET)
+	@RequestMapping(value="/session", method=RequestMethod.GET)
 	public String getSessionId(HttpServletRequest request) {
 		return request.getSession().getId();
 	}
+	
 }
