@@ -11,10 +11,15 @@
     left:       0;
     height:     100%;
     width:      100%;
-    background-color: transparent;
+    background: rgba(255, 255, 255, .8) 
+    			url("../image/wait.gif")
+    			50% 50%
+    			no-repeat;
+    /* background-color: transparent;
     background-image: url('../image/wait.gif');
 	background-repeat:no-repeat;
-	background-position:center;                               	
+	background-position:center; */          
+	filter:alpha(opacity=0);                     	
 }
 
 /* When the body has the loading class, we turn
